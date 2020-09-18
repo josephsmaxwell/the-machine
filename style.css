@@ -1,0 +1,393 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/* Generic Stuff */
+body {
+    --main-bg-color: white;
+    --main-text-color: black;
+    --link-color: #666;
+    --link-hover-color: #333;
+    --link-visited-color: #999;
+    --page-ctrl: #eee;
+    --page-ctrl-hover: #ddd;
+
+    background: var(--main-bg-color);
+    color: var(--main-text-color);
+    font-size: 1.4em;
+    font-family: "Times New Roman", serif;
+    margin: 0;
+}
+
+body.dark {
+    --main-bg-color: #222;
+    --main-text-color: #ddd;
+    --link-color: #ccc;
+    --link-visited-color: #bbb;
+    --link-hover-color: #eee;
+    --page-ctrl: #444;
+    --page-ctrl-hover: #777;
+
+    background: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+
+a {
+    text-decoration: none;
+    color: #666; /* fallback */
+    color: var(--link-color);
+}
+
+a:visited {
+    color: #999; /* fallback */
+    color: var(--link-visited-color);
+}
+
+a:hover {
+    color: #333; /* fallback */
+    color: var(--link-hover-color);
+}
+
+div.flex-content {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 800px;
+    position: relative;
+    padding: 0 8px;
+}
+
+@media only screen and (max-width: 600px) {
+    p {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    p {
+        font-size: 18px;
+    }
+
+    pre {
+        font-size: 18px;
+    }
+}
+
+.i {
+    font-style: italic;
+}
+
+/* Title Page */
+h1 {
+    font-size: 2.1em;
+}
+
+@-webkit-keyframes shimmer {
+    from {
+        color: #eee;
+    }
+
+    to {
+        color: #999;
+    }
+}
+
+@keyframes shimmer {
+    from {
+        color: #eee;
+    }
+
+    to {
+        color: #999;
+    }
+}
+
+a.title-page.next {
+    -webkit-animation-name: shimmer;
+            animation-name: shimmer;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-timing-function: ease-in-out;
+            animation-timing-function: ease-in-out;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-delay: 5s;
+            animation-delay: 5s;
+}
+
+a.title-page.next:hover {
+    -webkit-animation: none;
+            animation: none;
+    color: lightgray;
+}
+
+/* Contents Page */
+div.contents p a {
+    font-size: 1.1em;
+}
+
+div.contents p {
+    margin-bottom: 10px;
+}
+
+div.contents span {
+    margin-bottom: 10px;
+    font-size: .9em;
+}
+
+div.contents span > a {
+    padding-right: 2px;
+}
+
+div.contents span > a:not(:last-child)::after {
+    content: " |";
+    color: var(--main-text-color);
+}
+
+p.label {
+    font-style: italic;
+    margin-bottom: 22.5px;
+}
+
+/* Part Titles */
+h2 {
+    font-weight: normal;
+}
+
+p.quote {
+    font-style: italic;
+    text-align: center;
+}
+
+p.quote > span {
+    display: block;
+    font-style: normal;
+    text-align: right;
+    padding-right: 30px;
+}
+
+/* Chapters */
+blockquote p {
+    font-style: italic;
+}
+
+blockquote.no-i p {
+    font-style: normal;
+}
+
+.text-content {
+    padding-top: 50px;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+pre div {
+    margin-top: 2em;
+}
+
+/* Page Controls */
+div.page-controls {
+    height: 100px;
+}
+
+div.page-controls > a {
+    position: absolute;
+    bottom: 15px;
+    font-size: 65px;
+    color: #eee; /* fallback */
+    color: var(--page-ctrl);
+}
+
+div.page-controls > a:hover {
+    color: lightgray; /* fallback */
+    color: var(--page-ctrl-hover);
+}
+
+a.next {
+    right: 15px;
+}
+
+a.prev {
+    left: 15px;
+}
+
+/* Nav Bar Styles */
+.bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: 100%;
+    height: 450px;
+    background-color: #333;
+    z-index: 1;
+    position: fixed;
+    top: -400px;
+    margin: 0;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.bar.hide {
+    top: -376px; /* height of the element */
+}
+
+.bar.show-menu {
+    /* top: 0px; */
+    top: -150px;
+}
+
+.bar-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    max-width: 800px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.bar-content .menu-toggle {
+    color: #ccc;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.bar-content .menu-toggle:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.bar-content .menu-toggle.open {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+.bar-content a {
+    font-size: 1.5em;
+    margin-bottom: 6px;
+}
+
+.bar-content a.prev {
+    padding-left: 20px;
+}
+
+.bar-content a.next {
+    padding-right: 20px;
+}
+
+.bar-content a,
+.menu-content a,
+.menu-body a {
+    color: #ccc;
+}
+
+.bar-content a:hover,
+.menu-content a:hover,
+.menu-body a:hover {
+    color: white;
+}
+
+.menu-content {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.2em;
+}
+
+.menu-content .menu-top {
+    padding-bottom: 5px;
+    width: 200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #999;
+}
+
+.menu-content .menu-top .home a {
+    font-size: .9em;
+    font-style: italic;
+    color: #ccc;
+}
+
+.menu-body p {
+    margin-bottom: 10px;
+}
+
+.menu-body span {
+    margin-bottom: 10px;
+    font-size: .9em;
+}
+
+.menu-body p {
+    font-size: 20px;
+}
+
+.menu-body span > a:not(:last-child)::after {
+    content: " |";
+    color: #999;
+}
+
+.menu-settings button {
+    border: none;
+    background: #333;
+    color: #999;
+    margin-top: 20px;
+    font-family: "Times New Roman", serif;
+    cursor: pointer;
+    border-radius: 10%
+}
+
+/* Dark Mode */
+.dark .menu-settings button {
+    color: white;
+    background: #999;
+    color: #333;
+}
