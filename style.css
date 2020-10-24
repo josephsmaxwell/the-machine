@@ -265,7 +265,7 @@ a.prev {
 }
 
 .bar.hide {
-    top: -376px; /* height of the element */
+    top: -450px; /* height of the element */
 }
 
 .bar.show-menu {
