@@ -49,6 +49,7 @@ function generateNavBar(prevHref, nextHref) {
         <div class="menu-body">
             ${part1}
             ${part2}
+            ${part3}
         </div>
         <div class="menu-settings">
             <button id="dark-mode-button" onclick="toggleDarkMode()">Dark Mode</button>
